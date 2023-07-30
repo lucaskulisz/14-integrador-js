@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Adivinanza</title>
+  <script>
+    // Generar un número aleatorio entre 1 y 100
+    var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+    // Inicializar el número de intentos
+    var intentos = 0;
+
+    function adivinarNumero() {
+      // Obtener el número ingresado por el usuario
+      var numeroIngresado = parseInt(document.getElementById('numero').value);
+
+      // Incrementar el número de intentos
+      intentos++;
+
+      // Comprobar si el número ingresado es correcto
+      if (numeroIngresado === numeroAleatorio) {
+        // Mostrar mensaje de felicitación
+        document.getElementById('resultado').innerHTML = '¡Felicitaciones! Adivinaste el número en ' + intentos + ' intento(s).';
+      } else if (numeroIngresado < numeroAleatorio) {
+        // Mostrar mensaje de número demasiado bajo
+        document.getElementById('resultado').innerHTML = 'Intenta con un número más alto.';
+      } else {
+        // Mostrar mensaje de número demasiado alto
+        document.getElementById('resultado').innerHTML = 'Intenta con un número más bajo.';
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Juego de Adivinanza</h1>
+  <p>Estoy pensando en un número entre 1 y 100. ¿Puedes adivinar cuál es?</p>
+  <input type="number" id="numero" />
+  <button onclick="adivinarNumero()">Adivinar</button>
+  <p id="resultado"></p>
+</body>
+</html>
+<!-- // Generar un número aleatorio entre 1 y 100
+var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+// Inicializar el número de intentos
+var intentos = 0;
+
+function adivinarNumero() {
+  // Obtener el número ingresado por el usuario
+  var numeroIngresado = parseInt(prompt('Adivina el número (entre 1 y 100):'));
+
+  // Incrementar el número de intentos
+  intentos++;
+
+  // Comprobar si el número ingresado es correcto
+  if (numeroIngresado === numeroAleatorio) {
+    // Mostrar mensaje de felicitación
+    console.log('¡Felicitaciones! Adivinaste el número en ' + intentos + ' intento(s).');
+  } else if (numeroIngresado < numeroAleatorio) {
+    // Mostrar mensaje de número demasiado bajo
+    console.log('Intenta con un número más alto.');
+  } else {
+    // Mostrar mensaje de número demasiado alto
+    console.log('Intenta con un número más bajo.');
+  }
+}
+
+// Llamar a la función para iniciar el juego
+adivinarNumero();
+ -->

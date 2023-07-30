@@ -1,0 +1,193 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tareas</title>
+  <style>
+    /* Estilos CSS para las animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  </style>
+  <script>
+    // Función para agregar una tarea a la lista
+    function agregarTarea() {
+      var input = document.getElementById('nuevaTarea');
+      var tarea = input.value;
+
+      if (tarea !== '') {
+        var lista = document.getElementById('listaTareas');
+        var nuevaTarea = document.createElement('li');
+        nuevaTarea.textContent = tarea;
+        nuevaTarea.addEventListener('click', completarTarea);
+      
+
+        lista.appendChild(nuevaTarea);
+
+        // Animación de aparición
+        nuevaTarea.classList.add('fade-in');
+
+        input.value = '';
+      }
+    }
+
+    // Función para marcar una tarea como completada
+    function completarTarea() {
+      this.classList.toggle('completed');
+    }
+
+    /*  Función para eliminar una tarea de la lista
+     function eliminarTarea() {
+      this.parentNode.removeChild(this);
+    } */ 
+  </script>
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+  <input type="text" id="nuevaTarea" placeholder="Agregar una tarea..." />
+  <button onclick="agregarTarea()">Agregar</button>
+  <ul id="listaTareas">
+     Tareas se agregarán dinámicamente aquí -->
+ <!--  </ul>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tareas</title>
+  <style>
+    /* Estilos CSS para las animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  </style>
+  <script>
+    // Función para agregar una tarea a la lista
+    function agregarTarea() {
+      var input = document.getElementById('nuevaTarea');
+      var tarea = input.value;
+
+      if (tarea !== '') {
+        var lista = document.getElementById('listaTareas');
+        var nuevaTarea = document.createElement('li');
+        nuevaTarea.textContent = tarea;
+        nuevaTarea.addEventListener('click', completarTarea);
+        nuevaTarea.addEventListener('click', eliminarTarea); // Agregamos el evento de clic para eliminar la tarea
+
+        lista.appendChild(nuevaTarea);
+
+        // Animación de aparición
+        nuevaTarea.classList.add('fade-in');
+
+        input.value = '';
+      }
+    }
+
+    // Función para marcar una tarea como completada
+    function completarTarea() {
+      this.classList.toggle('completed');
+    }
+
+    // Función para eliminar una tarea de la lista
+    function eliminarTarea() {
+      this.parentNode.removeChild(this);
+    }
+  </script>
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+  <input type="text" id="nuevaTarea" placeholder="Agregar una tarea..." />
+  <button onclick="agregarTarea()">Agregar</button>
+  <ul id="listaTareas">
+   Tareas se agregarán dinámicamente aquí -->
+ <!--  </ul>
+</body>
+</html> --> 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tareas</title>
+  <style>
+    /* Estilos CSS para las animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  </style>
+  <script>
+    // Función para agregar una tarea a la lista
+    function agregarTarea() {
+      var input = document.getElementById('nuevaTarea');
+      var tarea = input.value;
+
+      if (tarea !== '') {
+        var lista = document.getElementById('listaTareas');
+        var nuevaTarea = document.createElement('li');
+        nuevaTarea.textContent = tarea;
+
+        // Agregar eventos de clic para completar tarea y eliminar tarea
+        nuevaTarea.addEventListener('click', completarTarea);
+        nuevaTarea.addEventListener('mousedown', eliminarTarea);
+
+        lista.appendChild(nuevaTarea);
+
+        // Animación de aparición
+        nuevaTarea.classList.add('fade-in');
+
+        input.value = '';
+      }
+    }
+
+    // Función para marcar una tarea como completada
+    function completarTarea(event) {
+      var tarea = event.target;
+      tarea.classList.toggle('completed');
+    }
+
+    // Función para eliminar una tarea de la lista
+    function eliminarTarea(event) {
+      if (event.button === 2) { // Solo ejecutar si es el botón derecho del mouse
+        event.preventDefault();
+        var tarea = event.target;
+        tarea.parentNode.removeChild(tarea);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+  <input type="text" id="nuevaTarea" placeholder="Agregar una tarea..." />
+  <button onclick="agregarTarea()">Agregar</button>
+  <ul id="listaTareas">
+    <!-- Tareas se agregarán dinámicamente aquí -->
+  </ul>
+</body>
+</html>
